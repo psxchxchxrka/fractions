@@ -3,6 +3,17 @@
 
 #include <iostream>
 using namespace std;
+
+/// <summary>
+/// num - числитель
+/// denum - знаменатель
+/// </summary>
+class Fraction {
+private:
+    int num;
+    int denum;
+
+};
 int main()
 {
     
