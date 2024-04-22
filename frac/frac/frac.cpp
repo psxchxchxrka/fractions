@@ -12,11 +12,39 @@ class Fraction {
 private:
     int num;
     int denum;
+public:
+    Fraction(int n1, int n2) {
+        num = n1;
+        denum = n2;
+        reduction();
+    }
+    Fraction() {
+        num = 1;
+        denum = 1;
+    }
+    void print() {
+        cout << num << "/" << denum << endl;
+    }
+    void reduction() {
+        int a = 1;
+        while (a < num || a < denum) {
+            if (num % a == 0 && denum % a == 0) {
+                denum = denum / a;
+                num = num / a;
+                
+            }
+            a += 1;
+        }
+
+    }
 
 };
 int main()
 {
-    
+    Fraction frac = Fraction(4, 10);
+    frac.print();
+
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
