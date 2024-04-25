@@ -38,12 +38,76 @@ public:
 
     }
 
+    Fraction operator * (Fraction b) {
+        return Fraction(num * b.num, denum * b.denum);
+    }
+
+    Fraction operator / (Fraction b) {
+        return Fraction(num * b.denum, denum * b.num);
+    }
+
+    Fraction operator + (Fraction b) {
+        return Fraction(num * b.denum + denum * b.num, denum * b.denum);
+    }
+    
+    Fraction operator - (Fraction b) {
+        return Fraction(num * b.denum - denum * b.num, denum * b.denum);
+    }
+
+    Fraction operator ++ () {
+        return Fraction(num+denum, denum);
+    }
+
+    Fraction operator -- () {
+        return Fraction(num - denum, denum);
+    }
+
+    Fraction operator *= (Fraction b) {
+        return Fraction(num = num * b.num, denum = denum * b.denum);
+    }
+
+    Fraction operator += (Fraction b) {
+        return Fraction(num = num * b.denum + denum * b.num, denum = denum * b.denum);
+    }
+
+    Fraction operator -= (Fraction b) {
+        return Fraction(num = num * b.denum - denum * b.num, denum = denum * b.denum);
+    }
+
+    Fraction operator /= (Fraction b) {
+        return Fraction(num = num * b.denum,denum = denum * b.num);
+    }
 };
 int main()
 {
-    Fraction frac = Fraction(4, 10);
-    frac.print();
-
+    //Fraction frac = Fraction(10000, 12000);
+    //frac.print();
+    Fraction a = Fraction(3,5);
+    Fraction b = Fraction(3,5);
+    Fraction c = a * b;
+    Fraction d = a / b;
+    Fraction e = a + b;
+    Fraction f = a - b;
+    Fraction x = a *= b;
+    Fraction w = a += b;
+    Fraction v = a -= b;
+    Fraction y = a /= b;
+    //1
+    c.print();
+    //2
+    d.print();
+    //3
+    e.print();
+    //4
+    f.print();
+    //5
+    x.print();
+    //6
+    w.print();
+    //7
+    v.print();
+    //8
+    y.print();
 
 }
 
